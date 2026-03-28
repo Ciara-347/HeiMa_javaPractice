@@ -1,8 +1,8 @@
-package com.itheima.memory;
+package com.itheima.test;
 
 import java.util.Scanner;
 
-public class md1 {
+public class test1 {
 
     public static void main(String[] args) {
 
