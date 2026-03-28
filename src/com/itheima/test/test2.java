@@ -19,33 +19,38 @@ public class test2 {
 
         //创建键盘录入数据
         Scanner sc = new Scanner(System.in);
-        System.out.println("请输入红包总额：");
-        double M = sc.nextDouble();
-        System.out.println("请输入红包个数：");
-        double N = sc.nextDouble();
+        int M;
+        int N;
+        while(true){
+            System.out.println("请输入红包总额(单位：分)：");
+            M = sc.nextInt();
+            System.out.println("请输入红包个数：");
+            N = sc.nextInt();
+            if(M<0 || N<=0){
+                System.out.println("输入数据需>0，请重新输入");
+            }else if(M<N){
+                System.out.println("红包个数不能大于红包总额，请重新输入");
+            }else{
+                break;
+            }
+        }
+
         //随机分配红包
         getRedPacket(M,N);
 
     }
 
     //随机红包
-    public static void getRedPacket(double M,double N){
+    public static void getRedPacket(int M,int N){
         Random r = new Random();
-        double money;
-
-        if(M==0.01* N){
-            for (int i = 1; i <= N; i++) {
-                System.out.println("第" + i + "个人：" + 0.01);
-            }
-        }else{
-            for (int i = 1; i <= N; i++) {
-                if (i == N) {
-                    System.out.println("第" + i + "个人：" + M);
-                } else {
-                    money = r.nextDouble(M-(0.01 * (N - i))) + 0.01;//随机红包金额(0.1,总钱数-0.1剩余人数)
-                    System.out.println("第" + i + "个人：" + money);
-                    M -= money;
-                }
+        int money;
+        for (int i = 1; i <= N; i++) {
+            if (i == N) {
+                System.out.println("第" + i + "个人：" + M);
+            } else {
+                money = r.nextInt(M- (N - i)) + 1;//随机红包金额(0.1,总钱数-0.1剩余人数)
+                System.out.println("第" + i + "个人：" + money);
+                M -= money;
             }
         }
     }
