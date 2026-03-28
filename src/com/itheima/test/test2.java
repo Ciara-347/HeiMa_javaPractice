@@ -33,16 +33,16 @@ public class test2 {
         Random r = new Random();
         double money;
 
-        if(M==0.1* N){
+        if(M==0.01* N){
             for (int i = 1; i <= N; i++) {
-                System.out.println("第" + i + "个人：" + 0.1);
+                System.out.println("第" + i + "个人：" + 0.01);
             }
         }else{
             for (int i = 1; i <= N; i++) {
                 if (i == N) {
                     System.out.println("第" + i + "个人：" + M);
                 } else {
-                    money = r.nextDouble(M-(0.1 * (N - i))) + 0.1;//随机红包金额(0.1,总钱数-0.1剩余人数)
+                    money = r.nextDouble(M-(0.01 * (N - i))) + 0.01;//随机红包金额(0.1,总钱数-0.1剩余人数)
                     System.out.println("第" + i + "个人：" + money);
                     M -= money;
                 }
