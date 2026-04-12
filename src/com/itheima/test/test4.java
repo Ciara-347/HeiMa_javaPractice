@@ -33,7 +33,7 @@ public class test4 {
         }
         //找出最多的候选人
         int maxIndex = getMaxIndex(votes);
-        System.out.println("第" + maxIndex + "个候选人得票最多");
+        System.out.println("第" + maxIndex + "个候选人得票最多,得票："+votes[maxIndex]);
         //统计弃票数和弃票率
         System.out.println("弃票数是：" + votes[0]+",弃票率是：" + getRate(votes[0], 1000)+"%");
     }
