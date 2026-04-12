@@ -32,8 +32,7 @@ public class test4 {
             System.out.println("第" + i + "个候选人的得票数是：" + votes[i] + ",得票率是：" + getRate(votes[i], 1000)+"%");
         }
         //找出最多的候选人
-        int maxIndex = getMaxIndex(votes);
-        System.out.println("第" + maxIndex + "个候选人得票最多,得票："+votes[maxIndex]);
+        getMax(votes);
         //统计弃票数和弃票率
         System.out.println("弃票数是：" + votes[0]+",弃票率是：" + getRate(votes[0], 1000)+"%");
     }
@@ -42,13 +41,20 @@ public class test4 {
         return count * 1.0 / total*100;
     }
 
-    public static int getMaxIndex(int[] arr){
-        int maxIndex = 1;
-        for (int i = 1; i < arr.length; i++) {
-            if(arr[i] > arr[maxIndex]){
-                maxIndex = i;
+    public static void getMax(int[] arr){
+        //找出最多的票数
+        int max = arr[1];
+        for (int i = 2; i < arr.length; i++) {
+            if(arr[i] > max){
+                max = arr[i];
             }
         }
-        return maxIndex;
+        //找出票数最多的候选人
+        //可能存在多个候选人得票最多
+        for (int i = 1; i < arr.length; i++) {
+            if(arr[i] == max){
+                System.out.println("第" + i + "个候选人得票最多,得票："+max);
+            }
+        }
     }
 }
