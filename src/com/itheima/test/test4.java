@@ -25,26 +25,7 @@ public class test4 {
         for (int i = 0; i < 1000; i++) {
             int vote = r.nextInt(6);
             //计数
-            switch (vote){
-                case 0:
-                    votes[0]++;
-                    break;
-                case 1:
-                    votes[1]++;
-                    break;
-                case 2:
-                    votes[2]++;
-                    break;
-                case 3:
-                    votes[3]++;
-                    break;
-                case 4:
-                    votes[4]++;
-                    break;
-                case 5:
-                    votes[5]++;
-                    break;
-            }
+            votes[vote]++;
         }
         //统计每个候选人的得票数和得票率
         for (int i = 1; i < votes.length; i++) {
