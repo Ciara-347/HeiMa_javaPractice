@@ -30,19 +30,19 @@ public class test4 {
         //统计每个候选人的得票数和得票率
         for (int i = 1; i < votes.length; i++) {
             System.out.println("第" + i + "个候选人的得票数是：" + votes[i]);
-            System.out.println("第" + i + "个候选人的得票率是：" + getRate(votes[i], 1000));
+            System.out.println("第" + i + "个候选人的得票率是：" + getRate(votes[i], 1000)+"%");
         }
         //找出最多的候选人
         int maxIndex = getMaxIndex(votes);
         System.out.println("第" + maxIndex + "个候选人得票最多");
         //统计弃票数和弃票率
         System.out.println("弃票数是：" + votes[0]);
-        System.out.println("弃票率是：" + getRate(votes[0], 1000));
+        System.out.println("弃票率是：" + getRate(votes[0], 1000)+"%");
 
     }
 
     public static Double getRate(int count, int total){
-        return count * 1.0 / total;
+        return count * 1.0 / total*100;
     }
 
     public static int getMaxIndex(int[] arr){
