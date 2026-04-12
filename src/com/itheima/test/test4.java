@@ -18,12 +18,12 @@ public class test4 {
             要求2:
             统计弃票数和弃票率是多少?
         */
-        Random rd = new Random();
+        Random r = new Random();
         //创建一个长度为6的数组，数组的索引0表示弃权，1-5表示候选人
         int[] votes = new int[6];
         //循环1000次，模拟投票
         for (int i = 0; i < 1000; i++) {
-            int vote = rd.nextInt(6);
+            int vote = r.nextInt(6);
             //计数
             switch (vote){
                 case 0:
