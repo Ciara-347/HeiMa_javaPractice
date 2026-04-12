@@ -37,6 +37,16 @@ public class test3 {
             }
             k++;
         }
+        while (i < arr1.length) {
+            arr3[k] = arr1[i];
+            i++;
+            k++;
+        }
+        while (j < arr2.length) {
+            arr3[k] = arr2[j];
+            j++;
+            k++;
+        }
         // 找出中位数
         if (arr3.length % 2 == 0) {
             return (arr3[arr3.length / 2] + arr3[arr3.length / 2 - 1]) / 2.0;
