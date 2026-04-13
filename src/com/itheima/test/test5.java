@@ -21,7 +21,7 @@ public class test5 {
 //        int trap = getTrap(height, max);
 //        System.out.println(trap);
 
-        //解法2（双指针动态规划）
+        //解法2（动态规划）
         int trap = getTrap2(height);
         System.out.println(trap);
 
