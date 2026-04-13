@@ -15,6 +15,7 @@ public class test5 {
             可以接6个单位的雨水(蓝色部分表示雨水)
         */
 
+        //（分层计算）
         int[] height = {0,1,0,2,1,0,1,3,2,1,2,1};
         int max = getMax(height);
         int trap = getTrap(height, max);
