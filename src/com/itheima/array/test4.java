@@ -14,18 +14,21 @@ public class test4 {
         //创建随机数
         Random r = new Random();
         //array
-        int [] arr = new int[10];
-        for(int i = 0;i< arr.length;i++){
+        int [] arr = {-1,-1,-1,-1,-1,-1,-1,-1,-1,-1};
+        for (int i = 0; i < arr.length; i++) {
+            boolean flag = true;
             int randex = r.nextInt(100);
-            for(int j=0;j<i;j++){
-                if(arr[j]==randex){
-                    i--;
+            for(int j = 0;j<i;j++){
+                if(arr[i]==arr[j]){
+                    flag = false;
                     break;
-                }else{
-                    arr[i]=randex;
                 }
             }
-            arr[i]=randex;
+            if(flag){
+                arr[i] = randex;
+            }else{
+                i--;
+            }
         }
         //遍历
         for (int i = 0; i < arr.length; i++) {
